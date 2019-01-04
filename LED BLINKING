@@ -1,0 +1,15 @@
+# define F_CPU 16000000UL // clock speed is 16MHz
+#include <avr/io.h>
+#include <util/delay.h>
+int main(void)
+{
+              DDRD = 0xFF; // declared port B as output
+              while(1) // initialize infinite while loop
+              {
+                     PORTD = 0xFF; // turn on all LEDs of PORTB
+                     _delay_ms(1000); // delay of one second
+                     PORTD = 0x00; // turn off all LEDs of PORTB
+                  _delay_ms(1000); // delay of one second
+    } // while loop end
+} // main end
+
